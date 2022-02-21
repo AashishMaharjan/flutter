@@ -1,6 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/pages/homepage.dart';
+import 'package:myapp/pages/loginpage.dart';
 
 void main() => runApp( const MyApp());
 
@@ -15,7 +18,16 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Material(child: Center(child: Text("Welcome to Flutter"),),),
+  
+      themeMode: ThemeMode.dark,
+      theme: ThemeData(
+        primarySwatch: Colors.deepPurple,
+        textTheme: GoogleFonts.latoTextTheme(),
+        ),
+     // darkTheme: ThemeData(brightness: Brightness.dark),
+     routes: {
+       "/": (context) => LoginPage(),
+     } ,
     );
       
     
